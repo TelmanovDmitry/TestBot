@@ -9,14 +9,14 @@ import java.sql.Timestamp;
 
 @Data
 @Accessors(fluent = true)
-@Entity(name ="Users")
+@Entity(name = "Users")
 public class User {
 
     @Id
     private Long chatId;
 
-    private Long messagesSent;
+    private int messagesSent;
 
-    private Timestamp lastMessageSentAt;
+    private Timestamp lastMessageSentAt = null;
 
 }
