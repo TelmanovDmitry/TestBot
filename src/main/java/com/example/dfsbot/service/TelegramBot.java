@@ -175,10 +175,17 @@ public class TelegramBot extends TelegramLongPollingBot {
             int n = dataArray[0];
             int m = dataArray[1];
 
+            String errorInvNum = "Invalid number of vertexes or edges";
+            if(n <= 0 || m < 0 || m > n*(n-1)/2 || m > dataArray.length/2 - 1)
+                throw new NumberFormatException(errorInvNum);
+
             Graph g = new Graph(n);
 
+            String errorInvEdge = "Invalid data for edge: ";
             int i = 2;
             for (int j = 0; j < m; j++) {
+                if (dataArray[i] < 0 || dataArray[i] > n || dataArray[i + 1] < 0 || dataArray[i + 1] > n)
+                    throw new NumberFormatException(errorInvEdge + dataArray[i] + " " + dataArray[i + 1]);
                 g.addEdge(dataArray[i], dataArray[i + 1], isOrt);
                 i += 2;
             }
