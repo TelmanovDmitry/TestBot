@@ -1,13 +1,13 @@
-package com.example.vaiechotestbot2;
+package com.example.dfsbot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VaiEchoTestBot2Application {
+public class DFSBot {
 
     public static void main(String[] args) {
-        SpringApplication.run(VaiEchoTestBot2Application.class, args);
+        SpringApplication.run(DFSBot.class, args);
     }
 
 }

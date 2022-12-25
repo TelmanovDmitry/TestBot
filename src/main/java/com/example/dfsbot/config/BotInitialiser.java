@@ -1,6 +1,6 @@
-package com.example.vaiechotestbot2.config;
+package com.example.dfsbot.config;
 
-import com.example.vaiechotestbot2.service.TelegramBot;
+import com.example.dfsbot.service.TelegramBot;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -22,14 +22,14 @@ public class BotInitialiser {
     }
 
     @EventListener({ContextRefreshedEvent.class})
-    public void init(){
+    public void init() {
         TelegramBotsApi telegramBotsApi;
 
         try {
             telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(bot);
         } catch (TelegramApiException e) {
-            log.error("Error occured: " + e.getMessage());
+            log.error("Error occurred register bot " + bot.getBotUsername() + ": " + e.getMessage());
             throw new RuntimeException(e);
         }
     }

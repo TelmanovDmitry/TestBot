@@ -1,4 +1,4 @@
-package com.example.vaiechotestbot2.model;
+package com.example.dfsbot.model;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

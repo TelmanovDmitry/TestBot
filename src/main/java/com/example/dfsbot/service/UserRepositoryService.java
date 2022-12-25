@@ -1,7 +1,7 @@
-package com.example.vaiechotestbot2.service;
+package com.example.dfsbot.service;
 
-import com.example.vaiechotestbot2.model.User;
-import com.example.vaiechotestbot2.model.UserRepository;
+import com.example.dfsbot.model.User;
+import com.example.dfsbot.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

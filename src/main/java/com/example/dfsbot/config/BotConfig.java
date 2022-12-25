@@ -1,4 +1,4 @@
-package com.example.vaiechotestbot2.config;
+package com.example.dfsbot.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,11 +10,11 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("application.properties")
 public class BotConfig {
 
-    @Value("${bot_name}")
+    @Value("${bot.name}")
     String botName;
-    @Value("${bot_key}")
+    @Value("${bot.key}")
     String token;
 
-    @Value("${default_delay}")
-    Long delay;
+    @Value("${info.message}")
+    String infoMessage;
 }

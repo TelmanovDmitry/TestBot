@@ -1,10 +1,10 @@
-package com.example.vaiechotestbot2;
+package com.example.dfsbot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VaiEchoTestBot2ApplicationTests {
+class DFSBotApplicationTests {
 
     @Test
     void contextLoads() {
