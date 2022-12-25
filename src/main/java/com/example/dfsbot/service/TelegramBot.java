@@ -184,7 +184,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             String errorInvEdge = "Invalid data for edge: ";
             int i = 2;
             for (int j = 0; j < m; j++) {
-                if (dataArray[i] < 0 || dataArray[i] > n || dataArray[i + 1] < 0 || dataArray[i + 1] > n)
+                if (dataArray[i] <= 0 || dataArray[i] > n || dataArray[i + 1] <= 0 || dataArray[i + 1] > n)
                     throw new NumberFormatException(errorInvEdge + dataArray[i] + " " + dataArray[i + 1]);
                 g.addEdge(dataArray[i], dataArray[i + 1], isOrt);
                 i += 2;
