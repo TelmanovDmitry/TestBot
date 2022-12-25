@@ -128,7 +128,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         sendMessage(chatId, ort);
         sendMessage(chatId, topOrder);
 
-        String toExData = "6 7\n1 2\n2 3\n3 1\n1 4\n4 5\n4 6\n5 6\n";
+        String toExData = "6 6\n1 2\n3 2\n4 2\n2 5\n6 5\n4 6";
         sendMessage(chatId, toExData);
 
         String toExAnswer = "Bot will return:\n4 6 3 1 2 5";
