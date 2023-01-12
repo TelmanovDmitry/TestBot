@@ -8,12 +8,12 @@ import static java.lang.Math.min;
 public class Graph {
     private final int V;
     private final LinkedList<Integer>[] adj;
+
     private final Boolean[] used;
     private final int[] tin;
     private final int[] fup;
     private int timer;
 
-    // Конструктор
     public Graph(int v) {
         V = v;
         adj = new LinkedList[v];
@@ -40,6 +40,27 @@ public class Graph {
         else addEdge(v, w);
     }
 
+    private Boolean findCircle(int v, int[] colors) {
+        colors[v] = 1;
+        for (Integer i : adj[v]) {
+            if (colors[i] == 0)
+                if (findCircle(i, colors)) return true;
+            if (colors[i] == 1) return true;
+        }
+        colors[v] = 2;
+        return false;
+    }
+
+    private Boolean containsCircle() {
+        int[] colors = new int[V];
+        for (int i = 0; i < V; ++i)
+            colors[i] = 0;
+        for (int i = 0; i < V; ++i) {
+            if (findCircle(i, colors)) return true;
+        }
+        return false;
+    }
+
     private void topologicalSortUtil(int v, Stack<Integer> answer) {
         used[v] = true;
 
@@ -53,6 +74,8 @@ public class Graph {
     public String topologicalSort() {
         Stack<Integer> answer = new Stack<>();
         StringBuilder answerMessage = new StringBuilder();
+
+        if(containsCircle()) return "There is no topological sort for given graph";
 
         initUsed();
 
