@@ -1,2 +1,2 @@
-# VAIntelligenceEchoTestBot
-Test task for job offer
+# TestBot
+Project to test Long polling technology
